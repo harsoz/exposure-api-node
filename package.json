@@ -6,14 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/app.js",
     "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist"
+    "ts.check": "tsc --project tsconfig.json"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
