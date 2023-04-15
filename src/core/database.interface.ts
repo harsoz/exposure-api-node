@@ -1,36 +1,43 @@
-interface IDatabaseConnection {
-    connect(): void;
-    disconnect(): void;
+export interface IDatabaseConnection {
+    // avoid connect && disconnect by now
+    // connect(): Promise<void>;
+    // disconnect(): Promise<void>;
     executeQuery<T>(config: IQueryConfig): Promise<IDatabaseResponse<T>>;
 }
 
-interface IDatabaseConfig {
-    hostname: string;
+export interface IDatabaseConfig {
+    hostname: string | undefined;
     user: string;
     password: string;
     database: string;
     path: string;
 }
 
-interface IQueryConfig {
+export interface IQueryConfig {
 
     query: string;
     type: QueryType
 }
 
-interface IDatabaseResponse <T> {
+export interface IDatabaseResponse <T> {
     status: string;
     error: string | null;
     data: T | T[] | null;
 }
 
-enum QueryType {
+export interface IParam {
+    field: string;
+    datatype: string;
+    value: string;
+}
+
+export enum QueryType {
     FirstOrDefault = "FirstOrDefault",
     List = "List",
     Operation = "Operation",
 }
 
-enum Status{
+export enum Status{
     Success = "success",
     Error = "error"
 }
