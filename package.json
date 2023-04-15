@@ -5,8 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "build": "tsc --outDir /dist",
-    "ts.check": "tsc --project tsconfig.json"
+    "build": "tsc --outDir /dist"
   },
   "author": "",
   "license": "ISC",
